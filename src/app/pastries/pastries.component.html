@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-auto">
+        <app-pastry-details *ngIf="selectedPastry" [pastrie]="selectedPastry"></app-pastry-details>
+    </div>
+    <div class="col-lg card">
+        <div class="row">
+            <div class="col-auto" *ngFor="let tag of tags">
+                <button class="btn" [ngStyle]="{'background-color': tag | tagColor}" (click)="filter(tag)">{{ tag }}</button>
+            </div>
+        </div>
+        <ul class="list-group list-group-flush" *ngIf="pastries">
+            <li class="list-group-item" *ngFor="let pastrie of pastries">
+                <div class="card-body">
+                    <h1>{{ pastrie.name }}</h1>
+                    <i>recette n°{{ pastrie.id }} | {{ pastrie.ref }}</i>
+                    <p>{{ pastrie.description }}</p>
+                    <p>En stock: {{ pastrie.quantity }}</p>
+                    <p>Order: {{ pastrie.order }}</p>
+                    <p>Tags: 
+                        <span *ngFor="let tag of pastrie.tags" [ngStyle]="{'background-color': tag | tagColor}">{{ tag }} </span>
+                    </p>
+                    <p>Like: {{ pastrie.like }}</p>
+                    <button (click)="selectPastry(pastrie)" class="btn btn-primary">Détail</button>
+                </div>    
+            </li>
+        </ul>
+    </div>
+</div>

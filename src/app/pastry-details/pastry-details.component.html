@@ -1,0 +1,16 @@
+<img appDoThing src="{{ pastrie.url }}" width="400" class="img-thumbnail d-flex">
+<button class="btn btn-primary" (click)="sortIngredient($event)">Ordre Croissant</button>
+<ul class="list-group list-group-flush" *ngIf="ingredients">
+    <li class="list-group-item" *ngFor="let ingredient of ingredients; let i = index">
+        <div class="row" >
+            <div class="col-lg">
+                <span>{{ ingredient }}</span>
+            </div>
+            <div class="col-sm">
+                <button class="btn btn-info" (click)="hideIngredient($event)" id="hide{{ i }}">hide</button>
+                <button class="btn btn-danger" (click)="removeIngredient($event)" id="delete{{ i }}">X</button>
+            </div>
+        </div>
+    </li>
+</ul>
+<input class="" type="text" placeholder="Ajouter un ingrédient" (keyup.enter)="addIngredient($event)">
