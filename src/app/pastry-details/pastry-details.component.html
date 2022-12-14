@@ -1,4 +1,5 @@
-<img appDoThing src="{{ pastrie.url }}" width="400" class="img-thumbnail d-flex">
+<img appDoThing src="{{ pastrie?.url }}" width="400" class="img-thumbnail d-flex">
+<button class="btn btn-danger" (click)="goBack()">Retour</button>
 <button class="btn btn-primary" (click)="sortIngredient($event)">Ordre Croissant</button>
 <ul class="list-group list-group-flush" *ngIf="ingredients">
     <li class="list-group-item" *ngFor="let ingredient of ingredients; let i = index">

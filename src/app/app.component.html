@@ -1,15 +1,10 @@
 <div class="container-fuild principal">
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-auto">
-          <h1>{{ titlePage }}</h1>
-        </div>
-        <div class="col-auto">
-          <input type="text" placeholder="Rechercher une patisserie" (keyup.enter)="search($event)" >
-        </div>
-      </div>
+      <h1>{{ titlePage }}</h1>
     </div>
   </nav>
-  <app-pastries [pastries] = pastries ></app-pastries>
+  <router-outlet></router-outlet>
 </div>
+
+

@@ -8,29 +8,36 @@ import { List } from './../models/list';
 })
 export class PastrieService {
 
+  public pastries: Pastrie[] = PASTRIES
+  public list: List[] = INGREDIENTS_LISTS
+  public tags: string[] = TAGS
   constructor() { }
 
   getPastries(): Pastrie[] {
-    return PASTRIES;
+    return this.pastries;
   }
 
   getPastrie(id): Pastrie {
-    return PASTRIES[id];
+    return this.pastries[id];
+  }
+
+  putPastrie(pastrie: Pastrie){
+    this.pastries.push(pastrie);
   }
 
   getIngredientsLists(): List[] {
-    return INGREDIENTS_LISTS;
+    return this.list;
   }
 
   getIngredientsList(id): List {
-    return INGREDIENTS_LISTS[id];
+    return this.list[id];
   }
 
   getTags(): string[] {
-    return TAGS;
+    return this.tags;
   }
 
   getTag(id): string {
-    return TAGS[id];
+    return this.tags[id];
   }
 }

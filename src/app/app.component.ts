@@ -11,21 +11,8 @@ export class AppComponent implements OnInit{
   title = 'app-yams';
   titlePage: string = "Page principale: liste des patisseries"
   pastries: Pastrie[];
-  constructor(private pastrieService: PastrieService) {
-    this.pastries = this.pastrieService.getPastries();
-  }
+  constructor() {  }
 
   ngOnInit(){
-  }
-
-  search(event){
-    let pastries: Pastrie[] = this.pastrieService.getPastries();
-    let newPastries: Pastrie[] = []
-    pastries.forEach(pastrie => {
-      if(pastrie.name.toLowerCase().includes(event.target.value.toLowerCase())){
-        newPastries.push(pastrie);
-      }
-    })
-    this.pastries = newPastries;
   }
 }

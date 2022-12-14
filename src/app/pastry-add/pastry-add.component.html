@@ -1,0 +1,30 @@
+<div>
+    <span>Name</span>
+    <input [(ngModel)]="pastrie.name">
+</div>
+<div>
+    <span>Description</span>
+    <input [(ngModel)]="pastrie.description">
+</div>
+<div>
+    <span>Image URL</span>
+    <input [(ngModel)]="pastrie.url">
+</div>
+<div>
+    <span>Quantity</span>
+    <input [(ngModel)]="pastrie.quantity">
+</div>
+<div>
+    <span>Amount to order</span>
+    <input [(ngModel)]="pastrie.order">
+</div>
+<div>
+    <span>Tags</span>
+    <input [(ngModel)]="pastrie.tags">
+</div>
+<div>
+    <span>Like</span>
+    <input [(ngModel)]="pastrie.like">
+</div>
+
+<button (click)="addPastry()">Ajouter</button>
